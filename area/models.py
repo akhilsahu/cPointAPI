@@ -1,0 +1,12 @@
+from django.db import models
+from django.conf import settings
+
+# Create your models here.
+class Area(models.Model):
+    areaName =models.TextField()
+    timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True, auto_now_add=False)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL )
+    def __str__(self):
+        return self.areaName 
+
